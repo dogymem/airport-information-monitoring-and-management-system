@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PassengerFlightsAddDialog</class>
+ <widget class="QDialog" name="PassengerFlightsAddDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>517</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PassengerFlightsAddDialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="3" column="0">
+    <widget class="QDateTimeEdit" name="time">
+     <property name="whatsThis">
+      <string>Arrival time</string>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>23</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2000</year>
+       <month>12</month>
+       <day>31</day>
+      </datetime>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLineEdit" name="departure">
+     <property name="placeholderText">
+      <string>Departure</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="flightnumber">
+     <property name="placeholderText">
+      <string>Flight number</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="aircrafttype">
+     <property name="placeholderText">
+      <string>Aircraft type</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QCheckBox" name="emergency">
+       <property name="text">
+        <string>Emergency landing?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QCheckBox" name="connecting">
+       <property name="text">
+        <string>Connecting flight?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QCheckBox" name="assistans">
+       <property name="text">
+        <string>Special assistance?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="visa">
+       <property name="text">
+        <string>Visa control?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QCheckBox" name="customs">
+       <property name="text">
+        <string>Customs required?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QCheckBox" name="baggageUnloadded">
+       <property name="text">
+        <string>Baggage unloaded?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QCheckBox" name="late">
+       <property name="text">
+        <string>Late?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="isArrived">
+       <property name="text">
+        <string>Arrived?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="bus">
+       <property name="text">
+        <string>Bus rqquired?</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLineEdit" name="gate">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Gate</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLineEdit" name="runway">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Runway</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLineEdit" name="terminal">
+     <property name="placeholderText">
+      <string>Terminal</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLineEdit" name="baggagearea">
+     <property name="placeholderText">
+      <string>Baggage claim area</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QPushButton" name="AddButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

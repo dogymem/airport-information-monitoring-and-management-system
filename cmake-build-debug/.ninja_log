@@ -1,0 +1,21 @@
+# ninja log v6
+13687	14003	1733775736852506061	course	218f0a21684512c1
+4976	12203	1733775728141663178	CMakeFiles/course.dir/regestrationdialog.cpp.o	bbb3b5cae0a8ef38
+4978	12431	1733775728143700617	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	3d5df9659975d755
+4973	11715	1733775728138351594	CMakeFiles/course.dir/course_autogen/mocs_compilation.cpp.o	bdd308b4bb6ae7cc
+4976	12788	1733775728142068037	CMakeFiles/course.dir/pilotsregdialog.cpp.o	688606d62b459b04
+33	4971	1733775728074144000	course_autogen/timestamp	32302fe05de33b0d
+4973	11515	1733775728138960818	CMakeFiles/course.dir/main.cpp.o	c63f9721afae2a92
+4978	12267	1733775728144245581	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	8d0e2901b6614b63
+4977	12654	1733775728143186378	CMakeFiles/course.dir/cargodialog.cpp.o	2d4d77c7ae47f0f7
+123	157	1732083528686700255	clean	e625fed40095271c
+54	713	1733776863208444149	build.ninja	8accc6742843ddf8
+4974	9153	1733775728139772414	CMakeFiles/course.dir/clases.cpp.o	c13966912c003688
+4974	13687	1733775728139357326	CMakeFiles/course.dir/StartWindow.cpp.o	c32751fb42d83061
+18	123	1732083528581402715	CMakeFiles/clean.additional	c67978ad94b3aa4b
+4974	12800	1733775728140170340	CMakeFiles/course.dir/passengerregwindow.cpp.o	85572412df0bdd7b
+33	4971	1733775728074144000	course_autogen/mocs_compilation.cpp	32302fe05de33b0d
+4977	12738	1733775728142671832	CMakeFiles/course.dir/crewregdialog.cpp.o	e36468037ed3cf2
+4975	12199	1733775728140529759	CMakeFiles/course.dir/logindialog.cpp.o	90ed38d67b89479b
+4975	12293	1733775728141257729	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	ed2772385bc57e65
+4975	12438	1733775728140866541	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	119841eb823788eb

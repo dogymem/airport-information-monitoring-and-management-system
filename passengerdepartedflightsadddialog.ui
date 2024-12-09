@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PassengerDepartedFlightsAddDialog</class>
+ <widget class="QDialog" name="PassengerDepartedFlightsAddDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>517</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PassengerDepartedFlightsAddDialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="aircrafttype">
+     <property name="placeholderText">
+      <string>Aircraft type</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLineEdit" name="fuelStatus">
+     <property name="placeholderText">
+      <string>Fuel status</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLineEdit" name="status">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Status</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <widget class="QSpinBox" name="passMax">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>500</number>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QCheckBox" name="baggageLoadded">
+     <property name="text">
+      <string>Baggage loaded?</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QDateTimeEdit" name="time">
+     <property name="whatsThis">
+      <string>Departure time</string>
+     </property>
+     <property name="specialValueText">
+      <string notr="true"/>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>23</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2000</year>
+       <month>12</month>
+       <day>31</day>
+      </datetime>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLineEdit" name="destination">
+     <property name="placeholderText">
+      <string>Destination</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLineEdit" name="terminal">
+     <property name="placeholderText">
+      <string>Terminal</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLineEdit" name="aircraftStatus">
+     <property name="placeholderText">
+      <string>Aircraft status</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="0">
+    <widget class="QTimeEdit" name="boardingEndTime"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="flightnumber">
+     <property name="placeholderText">
+      <string>Flight number</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0">
+    <widget class="QTimeEdit" name="boardingStartTime"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLineEdit" name="runway">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Runway</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0">
+    <widget class="QTimeEdit" name="checkInStartTime"/>
+   </item>
+   <item row="16" column="0">
+    <widget class="QTimeEdit" name="checkInEndTime"/>
+   </item>
+   <item row="19" column="0">
+    <widget class="QPushButton" name="AddButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLineEdit" name="gate">
+     <property name="placeholderText">
+      <string>Gate</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QCheckBox" name="isDepart">
+     <property name="text">
+      <string>Depated?</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

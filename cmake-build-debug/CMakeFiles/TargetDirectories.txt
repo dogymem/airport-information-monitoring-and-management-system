@@ -1,0 +1,5 @@
+/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/CMakeFiles/course.dir
+/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/CMakeFiles/course_autogen_timestamp_deps.dir
+/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/CMakeFiles/course_autogen.dir
