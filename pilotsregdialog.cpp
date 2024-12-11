@@ -9,6 +9,7 @@
 #include <QMessageBox>
 
 #include "clases.h"
+#include "Exception.h"
 #include "ui_PilotsRegDialog.h"
 
 
@@ -49,20 +50,29 @@ void PilotsRegDialog::addActivation() {
 void PilotsRegDialog::on_addButton_clicked() {
     backUpPilots.push(pilots);
     Pilot buffer;
-    buffer.set_name(ui->name->text().toStdString());
-    buffer.set_surname(ui->surname->text().toStdString());
-    buffer.set_middle_name(ui->middle->text().toStdString());
-    buffer.set_age(ui->Age->text().toInt());
-    buffer.set_pass_num(ui->passNum->text().toStdString());
-    buffer.set_pass_expiry_date(ui->passDate->text().toStdString());
-    buffer.set_nationality(ui->nationality->text().toStdString());
-    buffer.set_email(ui->email->text().toStdString());
-    buffer.set_phone(ui->phone->text().toStdString());
-    buffer.set_license_num(ui->licenseNum->text().toStdString());
-    buffer.set_license_expiry_date(ui->licenseexpiredate->text().toStdString());
-    buffer.set_rank(ui->rank->text().toStdString());
-    buffer.set_experience(ui->experience->text().toStdString());
-    buffer.set_flight_hours(ui->flighthours->text().toInt());
+    try {
+        buffer.set_name(ui->name->text().toStdString());
+        buffer.set_surname(ui->surname->text().toStdString());
+        buffer.set_middle_name(ui->middle->text().toStdString());
+        buffer.set_age(ui->Age->text().toInt());
+        buffer.set_pass_num(ui->passNum->text().toStdString());
+        buffer.set_pass_expiry_date(ui->passDate->text().toStdString());
+        buffer.set_nationality(ui->nationality->text().toStdString());
+        buffer.set_email(ui->email->text().toStdString());
+        buffer.set_phone(ui->phone->text().toStdString());
+        buffer.set_license_num(ui->licenseNum->text().toStdString());
+        buffer.set_license_expiry_date(ui->licenseexpiredate->text().toStdString());
+        buffer.set_rank(ui->rank->text().toStdString());
+        buffer.set_experience(ui->experience->text().toStdString());
+        buffer.set_flight_hours(ui->flighthours->text().toInt());
+    } catch (humanException &e) {
+        e.showMessage();
+        return;
+    }
+    catch (pilotException &e) {
+        e.showMessage();
+        return;
+    }
     pilots.push_back(buffer);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);

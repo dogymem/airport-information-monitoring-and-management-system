@@ -9,6 +9,7 @@
 #include <QMessageBox>
 
 #include "clases.h"
+#include "Exception.h"
 #include "ui_CargoDialog.h"
 
 CargoDialog::CargoDialog(vector<Cargo>& cargo,QWidget *parent) :
@@ -44,11 +45,16 @@ void CargoDialog::onUndoClick() {
 void CargoDialog::onAddButtonClick() {
     backUpCargo.push(cargo);
     Cargo buffer;
-    buffer.set_name(ui->name->text().toStdString());
-    buffer.set_type(ui->type->text().toStdString());
-    buffer.set_shipper(ui->shipper->text().toStdString());
-    buffer.set_receiver(ui->receiver->text().toStdString());
-    buffer.set_weight(ui->weight->text().toInt());
+    try{
+        buffer.set_name(ui->name->text().toStdString());
+        buffer.set_type(ui->type->text().toStdString());
+        buffer.set_shipper(ui->shipper->text().toStdString());
+        buffer.set_receiver(ui->receiver->text().toStdString());
+        buffer.set_weight(ui->weight->text().toInt());
+    }catch (cargoException& e) {
+        e.showMessage();
+        return;
+    }
     cargo.push_back(buffer);
     ui->name->clear();
     ui->type->clear();

@@ -2,9 +2,11 @@
 #define STARTWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QPushButton>
 
 #include "clases.h"
+#include "Exception.h"
 
 template <typename T>
 struct StackNode {
@@ -36,7 +38,7 @@ public:
 
     T pop() {
         if (node == nullptr) {
-            throw "It's the end of stack";
+            throw StackException("There is no more undoes");
         }
         auto bufValue = node->value;
         auto* newNode = node->next;

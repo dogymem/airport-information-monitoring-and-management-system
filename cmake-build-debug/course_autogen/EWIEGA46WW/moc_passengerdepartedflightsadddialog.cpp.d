@@ -1,5 +1,5 @@
-/Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/cmake-build-debug/course_autogen/EWIEGA46WW/moc_passengerdepartedflightsadddialog.cpp: /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/passengerdepartedflightsadddialog.h \
-  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/cmake-build-debug/course_autogen/moc_predefs.h \
+/Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/cmake-build-debug/course_autogen/EWIEGA46WW/moc_passengerdepartedflightsadddialog.cpp: /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/passengerdepartedflightsadddialog.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/cmake-build-debug/course_autogen/moc_predefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -925,7 +925,7 @@
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg_va_list.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stdarg.h \
-  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/clases.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/clases.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \

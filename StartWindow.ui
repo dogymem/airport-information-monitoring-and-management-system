@@ -353,8 +353,7 @@
     <property name="title">
      <string>Edit</string>
     </property>
-    <addaction name="actionUndo"/>
-    <addaction name="actionGen"/>
+    <addaction name="actionUndo_2"/>
    </widget>
    <addaction name="menuOptions"/>
    <addaction name="menuEdit"/>
@@ -396,6 +395,14 @@
   <action name="actionGen">
    <property name="text">
     <string>Gen</string>
+   </property>
+  </action>
+  <action name="actionUndo_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Undo</string>
    </property>
   </action>
  </widget>

@@ -3,6 +3,9 @@
 #include <string>
 #include <random>
 #include <ctime>
+#include <qdatetime.h>
+
+#include "Exception.h"
 
 using namespace std;
 Human::Human() {
@@ -22,7 +25,14 @@ string Human::get_name() {
 }
 
 void Human::set_name(const string &name) {
+    if (name[0]<'A' || name[0]>'Z') {
+        throw humanException("Name must start with a capital letter");
+    }
+    if (!isAllLetters(name)) {
+        throw humanException("Name must contain only letters");
+    }
         this->name = name;
+
 }
 
 string Human::get_surname() {
@@ -30,6 +40,12 @@ string Human::get_surname() {
 }
 
 void Human::set_surname(const string &surname) {
+    if (surname[0]<'A' || surname[0]>'Z') {
+        throw humanException("Surname must start with a capital letter");
+    }
+    if (!isAllLetters(surname)) {
+        throw humanException("Surname must contain only letters");
+    }
     this->surname = surname;
 
 }
@@ -39,6 +55,12 @@ string Human::get_middle_name() {
 }
 
 void Human::set_middle_name(const string &middle_name) {
+    if (middle_name[0]<'A' || middle_name[0]>'Z') {
+        throw humanException("Middle name must start with a capital letter");
+    }
+    if (!isAllLetters(middle_name)) {
+        throw humanException("Middle name must contain only letters");
+    }
         middleName = middle_name;
 }
 
@@ -71,6 +93,12 @@ string Human::get_nationality() {
 }
 
 void Human::set_nationality(const string &nationality) {
+    if (nationality[0]<'A' || nationality[0]>'Z') {
+        throw humanException("Nationality must start with a capital letter");
+    }
+    if (!isAllLetters(nationality)) {
+        throw humanException("Nationality must contain only letters");
+    }
     this->nationality = nationality;
 }
 
@@ -79,7 +107,14 @@ string Human::get_email() {
 }
 
 void Human::set_email(const string &email) {
-    this->email = email;
+    vector<string> domains = {"gmail.com", "yahoo.com", "hotmail.com", "aol.com", "hotmail.co.uk", "hotmail.fr", "msn.com", "yahoo.fr", "wanadoo.fr", "orange.fr", "comcast.net", "yahoo.co.uk", "yahoo.com.br", "yahoo.co.in", "live.com", "rediffmail.com", "free.fr", "gmx.de", "web.de", "yandex.ru", "ymail.com", "libero.it", "outlook.com", "uol.com.br", "bol.com.br", "mail.ru", "cox.net", "hotmail.it", "sbcglobal.net", "sfr.fr", "live.fr", "verizon.net", "live.co.uk", "googlemail.com", "yahoo.es", "ig.com.br", "live.nl", "bigpond.com", "terra.com.br", "yahoo.it", "neuf.fr", "yahoo.de", "alice.it", "rocketmail.com", "att.net", "laposte.net", "facebook.com", "bellsouth.net", "yahoo.in", "hotmail.es", "charter.net", "yahoo.ca", "yahoo.com.au", "rambler.ru", "hotmail.de", "tiscali.it", "shaw.ca", "yahoo.co.jp", "sky.com", "earthlink.net", "optonline.net", "freenet.de", "t-online.de", "aliceadsl.fr", "virgilio.it", "home.nl", "qq.com", "telenet.be", "me.com", "yahoo.com.ar", "tiscali.co.uk", "yahoo.com.mx", "voila.fr", "gmx.net", "mail.com", "planet.nl", "tin.it", "live.it", "ntlworld.com", "arcor.de", "yahoo.co.id", "frontiernet.net", "hetnet.nl", "live.com.au", "yahoo.com.sg", "zonnet.nl", "club-internet.fr", "juno.com", "optusnet.com.au", "blueyonder.co.uk", "bluewin.ch", "skynet.be", "sympatico.ca", "windstream.net", "mac.com", "centurytel.net", "chello.nl", "live.ca", "aim.com", "bigpond.net.au", "protonmail.com", "proton.me", "zoho.com"};
+    for(auto& domain : domains) {
+        if (email.find(domain) != string::npos) {
+            this->email = email;
+            return;
+        }
+    }
+    throw humanException("Invalid email domain");
 }
 
 string Human::get_phone() {
@@ -87,6 +122,12 @@ string Human::get_phone() {
 }
 
 void Human::set_phone(const string &phone) {
+    if(phone[0]!='+')
+        throw humanException("Invalid phone number");
+    for(int i=1;i<phone.size();i++) {
+        if(phone[i]<'0' || phone[i]>'9')
+            throw humanException("Invalid phone number");
+    }
     this->phone = phone;
 }
 Pilot::Pilot() {
@@ -124,6 +165,12 @@ string Pilot::get_rank() {
 }
 
 void Pilot::set_rank(const string &rank) {
+    if (rank[0]<'A' || rank[0]>'Z') {
+        throw pilotException("Rank must start with a capital letter");
+    }
+    if (!isAllLetters(rank)) {
+        throw pilotException("Rank must contain only letters");
+    }
     this->rank = rank;
 }
 
@@ -132,6 +179,8 @@ string Pilot::get_experience() {
 }
 
 void Pilot::set_experience(const string &experience) {
+    if(experience[0]<'0' || experience[0]>'9')
+        throw humanException("Experience must start with a number");
     this->experience = experience;
 }
 Passenger::Passenger() {
@@ -198,6 +247,9 @@ string Passenger::get_passenger_class() {
 }
 
 void Passenger::set_passenger_class(const string &passenger_class) {
+    if (passenger_class[0]<'A' || passenger_class[0]>'Z') {
+        throw passengerException("Class must start with a capital letter");
+    }
     passengerClass = passenger_class;
 }
 
@@ -206,6 +258,8 @@ string Passenger::get_seat() {
 }
 
 void Passenger::set_seat(const string &seat) {
+    if(seat[0]<'0' || seat[0]>'9')
+        throw passengerException("Seat must start with a number");
     this->seat = seat;
 }
 
@@ -233,6 +287,9 @@ string CrewMember::get_languages(){
 }
 
 void CrewMember::set_languages(string languages) {
+    if (languages[0]<'A' || languages[0]>'Z') {
+        throw crewException("Language must start with a capital letter");
+    }
     this->languages = languages;
 }
 
@@ -241,6 +298,9 @@ string CrewMember::get_specialization(){
 }
 
 void CrewMember::set_specialization(const string &specialization) {
+    if (specialization[0]<'A' || specialization[0]>'Z') {
+        throw crewException("Specialization must start with a capital letter");
+    }
     this->specialization = specialization;
 }
 ///////////////////////////////////////////////////////////////////////
@@ -256,6 +316,9 @@ string Cargo::get_name() const {
 }
 
 void Cargo::set_name(const string &name) {
+    if (name[0]<'A' || name[0]>'Z') {
+        throw cargoException("Name type status must start with a capital letter");
+    }
     this->name = name;
 }
 
@@ -264,6 +327,9 @@ string Cargo::get_type() const {
 }
 
 void Cargo::set_type(const string &type) {
+    if (type[0]<'A' || type[0]>'Z') {
+        throw cargoException("Cargo type must start with a capital letter");
+    }
     this->type = type;
 }
 
@@ -280,6 +346,9 @@ string Cargo::get_shipper() const {
 }
 
 void Cargo::set_shipper(const string &shipper) {
+    if (shipper[0]<'A' || shipper[0]>'Z') {
+        throw cargoException("Shipper type status must start with a capital letter");
+    }
     this->shipper = shipper;
 }
 
@@ -288,6 +357,9 @@ string Cargo::get_receiver() const {
 }
 
 void Cargo::set_receiver(const string &receiver) {
+    if (receiver[0]<'A' || receiver[0]>'Z') {
+        throw cargoException("Receiver type status must start with a capital letter");
+    }
     this->receiver = receiver;
 }
 
@@ -381,6 +453,9 @@ string ArrivingFlight::get_departure() {
 }
 
 void ArrivingFlight::set_departure(const string &departure) {
+    if (departure[0]<'A' || departure[0]>'Z') {
+        throw flightException("Departure must start with a capital letter");
+    }
     this->departure = departure;
 }
 
@@ -492,6 +567,9 @@ string DepartingFlight::get_destination() {
 }
 
 void DepartingFlight::set_destination(const string &destination) {
+    if (destination[0]<'A' || destination[0]>'Z') {
+        throw flightException("Destination must start with a capital letter");
+    }
     this->destination = destination;
 }
 
@@ -500,6 +578,9 @@ string DepartingFlight::get_status() {
 }
 
 void DepartingFlight::set_status(const string &status) {
+    if (status[0]<'A' || status[0]>'Z') {
+        throw flightException("Status must start with a capital letter");
+    }
     this->status = status;
 }
 
@@ -508,6 +589,9 @@ string DepartingFlight::get_fuel_status() {
 }
 
 void DepartingFlight::set_fuel_status(const string &fuelStatus) {
+    if (fuelStatus[0]<'A' || fuelStatus[0]>'Z') {
+        throw flightException("Fuel status must start with a capital letter");
+    }
     this->fuelStatus = fuelStatus;
 }
 
@@ -516,6 +600,9 @@ string DepartingFlight::get_aircraft_status() {
 }
 
 void DepartingFlight::set_aircraft_status(const string &aircraftStatus) {
+    if (aircraftStatus[0]<'A' || aircraftStatus[0]>'Z') {
+        throw flightException("Aircraft status must start with a capital letter");
+    }
     this->aircraftStatus = aircraftStatus;
 }
 
@@ -675,6 +762,9 @@ string ArrivingCargoFlight::get_cargo_type() {
 }
 
 void ArrivingCargoFlight::set_cargo_type(const string &cargoType) {
+    if (cargoType[0]<'A' || cargoType[0]>'Z') {
+        throw flightException("Type must start with a capital letter");
+    }
     this->cargoType = cargoType;
 }
 
@@ -832,6 +922,9 @@ string DepartingCargoFlight::get_cargo_type() {
 }
 
 void DepartingCargoFlight::set_cargo_type(const string &cargoType) {
+    if (cargoType[0]<'A' || cargoType[0]>'Z') {
+        throw flightException("Cargo type status must start with a capital letter");
+    }
     this->cargoType = cargoType;
 }
 
@@ -878,15 +971,6 @@ void DepartingCargoFlight::set_cargo_list(const vector<Cargo> &cargoList) {
     this->cargoList = cargoList;
 }
 
-
-
-
-
-
-
-
-///////////////////////////////////////////////////
-
-
-
-
+bool isAllLetters(const string& str) {
+    return all_of(str.begin(), str.end(), ::isalpha);
+}

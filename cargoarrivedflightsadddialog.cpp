@@ -6,6 +6,7 @@
 
 #include "cargoarrivedflightsadddialog.h"
 
+#include "Exception.h"
 #include "StartWindow.h"
 #include "ui_CargoArrivedFlightsAddDialog.h"
 
@@ -47,22 +48,29 @@ CargoArrivedFlightsAddDialog::~CargoArrivedFlightsAddDialog() {
 
 void CargoArrivedFlightsAddDialog::onAddButtonClick() {
     if (isEditing) {
-        arrCargoFlights[row].set_flight_number(ui->flightnumber->text().toStdString());
-        arrCargoFlights[row].set_aircraft_type(ui->aircrafttype->text().toStdString());
-        arrCargoFlights[row].set_is_arrive(ui->isArrived->isChecked());
-        arrCargoFlights[row].set_is_late(ui->late->isChecked());
-        arrCargoFlights[row].set_customs_required(ui->customs->isChecked());
-        arrCargoFlights[row].set_is_connecting_flight(ui->connecting->isChecked());
-        arrCargoFlights[row].set_is_emergency_landing(ui->emergency->isChecked());
-        arrCargoFlights[row].set_is_cargo_unloaded(ui->baggageUnloadded->isChecked());
-        arrCargoFlights[row].set_time(ui->time->dateTime().toString().toStdString());
-        arrCargoFlights[row].set_runway(ui->runway->text().toStdString());
-        arrCargoFlights[row].set_departure(ui->departure->text().toStdString());
-        arrCargoFlights[row].set_cargo_max_weight(ui->cargomax->value());
-        arrCargoFlights[row].set_cargo_type(ui->cargotype->text().toStdString());
+        try {
+            arrCargoFlights[row].set_flight_number(ui->flightnumber->text().toStdString());
+            arrCargoFlights[row].set_aircraft_type(ui->aircrafttype->text().toStdString());
+            arrCargoFlights[row].set_is_arrive(ui->isArrived->isChecked());
+            arrCargoFlights[row].set_is_late(ui->late->isChecked());
+            arrCargoFlights[row].set_customs_required(ui->customs->isChecked());
+            arrCargoFlights[row].set_is_connecting_flight(ui->connecting->isChecked());
+            arrCargoFlights[row].set_is_emergency_landing(ui->emergency->isChecked());
+            arrCargoFlights[row].set_is_cargo_unloaded(ui->baggageUnloadded->isChecked());
+            arrCargoFlights[row].set_time(ui->time->dateTime().toString().toStdString());
+            arrCargoFlights[row].set_runway(ui->runway->text().toStdString());
+            arrCargoFlights[row].set_departure(ui->departure->text().toStdString());
+            arrCargoFlights[row].set_cargo_max_weight(ui->cargomax->value());
+            arrCargoFlights[row].set_cargo_type(ui->cargotype->text().toStdString());
+        }
+        catch (flightException& e) {
+            e.showMessage();
+            return;
+        }
         this->done(0);
     }else {
         ArrivingCargoFlight buffer;
+        try{
         buffer.set_flight_number(ui->flightnumber->text().toStdString());
         buffer.set_aircraft_type(ui->aircrafttype->text().toStdString());
         buffer.set_is_arrive(ui->isArrived->isChecked());
@@ -76,6 +84,11 @@ void CargoArrivedFlightsAddDialog::onAddButtonClick() {
         buffer.set_departure(ui->departure->text().toStdString());
         buffer.set_cargo_max_weight(ui->cargomax->value());
         buffer.set_cargo_type(ui->cargotype->text().toStdString());
+    }
+    catch (flightException& e) {
+        e.showMessage();
+        return;
+    }
         arrCargoFlights.push_back(buffer);
         this->done(0);
     }

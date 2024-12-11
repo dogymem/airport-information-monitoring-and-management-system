@@ -50,6 +50,8 @@ add_executable(course main.cpp
         departedcargoflightsadddialog.cpp
         departedcargoflightsadddialog.h
         departedcargoflightsadddialog.ui
+        Exception.cpp
+        Exception.h
 )
 target_link_libraries(course
         Qt::Core

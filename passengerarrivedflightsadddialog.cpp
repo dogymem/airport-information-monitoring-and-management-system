@@ -5,6 +5,8 @@
 // You may need to build the project (run Qt uic code generator) to get "ui_PassengerFlightsAddDialog.h" resolved
 
 #include "passengerarrivedflightsadddialog.h"
+
+#include "Exception.h"
 #include "ui_PassengerFlightsAddDialog.h"
 
 
@@ -51,43 +53,54 @@ PassengerFlightsAddDialog::~PassengerFlightsAddDialog() {
 
 void PassengerFlightsAddDialog::onAddButtonClick() {
     if (isEditing) {
-        arrPassFlights[row].set_flight_number(ui->flightnumber->text().toStdString());
-        arrPassFlights[row].set_aircraft_type(ui->aircrafttype->text().toStdString());
-        arrPassFlights[row].set_is_arrive(ui->isArrived->isChecked());
-        arrPassFlights[row].set_is_late(ui->late->isChecked());
-        arrPassFlights[row].set_customs_required(ui->customs->isChecked());
-        arrPassFlights[row].set_is_connecting_flight(ui->connecting->isChecked());
-        arrPassFlights[row].set_is_emergency_landing(ui->emergency->isChecked());
-        arrPassFlights[row].set_is_bus(ui->bus->isChecked());
-        arrPassFlights[row].set_special_assistance_required(ui->assistans->isChecked());
-        arrPassFlights[row].set_is_visa(ui->visa->isChecked());
-        arrPassFlights[row].set_is_baggage_unloaded(ui->baggageUnloadded->isChecked());
-        arrPassFlights[row].set_time(ui->time->dateTime().toString().toStdString());
-        arrPassFlights[row].set_runway(ui->runway->text().toStdString());
-        arrPassFlights[row].set_departure(ui->departure->text().toStdString());
-        arrPassFlights[row].set_gate(ui->gate->text().toStdString());
-        arrPassFlights[row].set_terminal(ui->terminal->text().toStdString());
-        arrPassFlights[row].set_baggage_claim_area(ui->baggagearea->text().toStdString());
+        try {
+            arrPassFlights[row].set_flight_number(ui->flightnumber->text().toStdString());
+            arrPassFlights[row].set_aircraft_type(ui->aircrafttype->text().toStdString());
+            arrPassFlights[row].set_is_arrive(ui->isArrived->isChecked());
+            arrPassFlights[row].set_is_late(ui->late->isChecked());
+            arrPassFlights[row].set_customs_required(ui->customs->isChecked());
+            arrPassFlights[row].set_is_connecting_flight(ui->connecting->isChecked());
+            arrPassFlights[row].set_is_emergency_landing(ui->emergency->isChecked());
+            arrPassFlights[row].set_is_bus(ui->bus->isChecked());
+            arrPassFlights[row].set_special_assistance_required(ui->assistans->isChecked());
+            arrPassFlights[row].set_is_visa(ui->visa->isChecked());
+            arrPassFlights[row].set_is_baggage_unloaded(ui->baggageUnloadded->isChecked());
+            arrPassFlights[row].set_time(ui->time->dateTime().toString().toStdString());
+            arrPassFlights[row].set_runway(ui->runway->text().toStdString());
+            arrPassFlights[row].set_departure(ui->departure->text().toStdString());
+            arrPassFlights[row].set_gate(ui->gate->text().toStdString());
+            arrPassFlights[row].set_terminal(ui->terminal->text().toStdString());
+            arrPassFlights[row].set_baggage_claim_area(ui->baggagearea->text().toStdString());
+        }
+        catch (flightException& e) {
+            e.showMessage();
+            return;
+        }
         this->done(0);
     }else {
         ArrivingPassengerFlight buffer;
-        buffer.set_flight_number(ui->flightnumber->text().toStdString());
-        buffer.set_aircraft_type(ui->aircrafttype->text().toStdString());
-        buffer.set_is_arrive(ui->isArrived->isChecked());
-        buffer.set_is_late(ui->late->isChecked());
-        buffer.set_customs_required(ui->customs->isChecked());
-        buffer.set_is_connecting_flight(ui->connecting->isChecked());
-        buffer.set_is_emergency_landing(ui->emergency->isChecked());
-        buffer.set_is_bus(ui->bus->isChecked());
-        buffer.set_special_assistance_required(ui->assistans->isChecked());
-        buffer.set_is_visa(ui->visa->isChecked());
-        buffer.set_is_baggage_unloaded(ui->baggageUnloadded->isChecked());
-        buffer.set_time(ui->time->dateTime().toString().toStdString());
-        buffer.set_runway(ui->runway->text().toStdString());
-        buffer.set_departure(ui->departure->text().toStdString());
-        buffer.set_gate(ui->gate->text().toStdString());
-        buffer.set_terminal(ui->terminal->text().toStdString());
-        buffer.set_baggage_claim_area(ui->baggagearea->text().toStdString());
+        try{
+            buffer.set_flight_number(ui->flightnumber->text().toStdString());
+            buffer.set_aircraft_type(ui->aircrafttype->text().toStdString());
+            buffer.set_is_arrive(ui->isArrived->isChecked());
+            buffer.set_is_late(ui->late->isChecked());
+            buffer.set_customs_required(ui->customs->isChecked());
+            buffer.set_is_connecting_flight(ui->connecting->isChecked());
+            buffer.set_is_emergency_landing(ui->emergency->isChecked());
+            buffer.set_is_bus(ui->bus->isChecked());
+            buffer.set_special_assistance_required(ui->assistans->isChecked());
+            buffer.set_is_visa(ui->visa->isChecked());
+            buffer.set_is_baggage_unloaded(ui->baggageUnloadded->isChecked());
+            buffer.set_time(ui->time->dateTime().toString().toStdString());
+            buffer.set_runway(ui->runway->text().toStdString());
+            buffer.set_departure(ui->departure->text().toStdString());
+            buffer.set_gate(ui->gate->text().toStdString());
+            buffer.set_terminal(ui->terminal->text().toStdString());
+            buffer.set_baggage_claim_area(ui->baggagearea->text().toStdString());
+        }catch (flightException& e) {
+            e.showMessage();
+            return;
+        }
         arrPassFlights.push_back(buffer);
         this->done(0);
     }

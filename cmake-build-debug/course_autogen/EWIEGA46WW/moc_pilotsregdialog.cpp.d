@@ -1,5 +1,5 @@
-/Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/cmake-build-debug/course_autogen/EWIEGA46WW/moc_pilotsregdialog.cpp: /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/pilotsregdialog.h \
-  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/cmake-build-debug/course_autogen/moc_predefs.h \
+/Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/cmake-build-debug/course_autogen/EWIEGA46WW/moc_pilotsregdialog.cpp: /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/pilotsregdialog.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/cmake-build-debug/course_autogen/moc_predefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -925,8 +925,9 @@
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/__stdarg_va_list.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stdarg.h \
-  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/StartWindow.h \
-  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/clases.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/Exception.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/StartWindow.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/clases.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
@@ -1073,10 +1074,13 @@
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QDialog \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QMessageBox \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qdialog.h \
+  /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qdialogbuttonbox.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
+  /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qmessagebox.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qpushbutton.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/egortomasev/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \

@@ -339,6 +339,7 @@ public:
     void set_cargo_list(const vector<Cargo> &cargo_list);
 };
 
+bool isAllLetters(const string& str);
 std::vector<DepartingCargoFlight> generateDepartingCargoFlights();
 std::vector<DepartingPassengerFlight> generateDepartingPassengerFlights();
 std::vector<ArrivingCargoFlight> generateArrivingCargoFlights();

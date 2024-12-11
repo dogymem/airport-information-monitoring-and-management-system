@@ -1,6 +1,7 @@
 #include "departedcargoflightsadddialog.h"
 
 #include "clases.h"
+#include "Exception.h"
 #include "ui_DepartedCargoFlightsAddDialog.h"
 
 
@@ -46,41 +47,53 @@ DepartedCargoFlightsAddDialog::~DepartedCargoFlightsAddDialog() {
 
 void DepartedCargoFlightsAddDialog::onAddButtonClick() {
     if (isEditing) {
-        depCargoFlight[row].set_flight_number(ui->flightnumber->text().toStdString());
-        depCargoFlight[row].set_aircraft_type(ui->aircrafttype->text().toStdString());
-        depCargoFlight[row].set_time(ui->time->text().toStdString());
-        depCargoFlight[row].set_runway(ui->runway->text().toStdString());
-        depCargoFlight[row].set_destination(ui->destination->text().toStdString());
-        depCargoFlight[row].set_status(ui->status->text().toStdString());
-        depCargoFlight[row].set_fuel_status(ui->fuelStatus->text().toStdString());
-        depCargoFlight[row].set_aircraft_status(ui->aircraftStatus->text().toStdString());
-        depCargoFlight[row].set_fuel_status(ui->fuelStatus->text().toStdString());
-        depCargoFlight[row].set_is_depart(ui->isDepart->isChecked());
-        depCargoFlight[row].set_aircraft_status(ui->aircraftStatus->text().toStdString());
-        depCargoFlight[row].set_is_cargo_loaded(ui->cargoLoadded->isChecked());
-        depCargoFlight[row].set_cargo_type(ui->type->text().toStdString());
-        depCargoFlight[row].set_cargo_start_load_time(ui->cargoStartTime->text().toStdString());
-        depCargoFlight[row].set_cargo_end_load_time(ui->cargoEndTime->text().toStdString());
-        depCargoFlight[row].set_cargo_max_weight(ui->maxWeight->value());
+        try {
+            depCargoFlight[row].set_flight_number(ui->flightnumber->text().toStdString());
+            depCargoFlight[row].set_aircraft_type(ui->aircrafttype->text().toStdString());
+            depCargoFlight[row].set_time(ui->time->text().toStdString());
+            depCargoFlight[row].set_runway(ui->runway->text().toStdString());
+            depCargoFlight[row].set_destination(ui->destination->text().toStdString());
+            depCargoFlight[row].set_status(ui->status->text().toStdString());
+            depCargoFlight[row].set_fuel_status(ui->fuelStatus->text().toStdString());
+            depCargoFlight[row].set_aircraft_status(ui->aircraftStatus->text().toStdString());
+            depCargoFlight[row].set_fuel_status(ui->fuelStatus->text().toStdString());
+            depCargoFlight[row].set_is_depart(ui->isDepart->isChecked());
+            depCargoFlight[row].set_aircraft_status(ui->aircraftStatus->text().toStdString());
+            depCargoFlight[row].set_is_cargo_loaded(ui->cargoLoadded->isChecked());
+            depCargoFlight[row].set_cargo_type(ui->type->text().toStdString());
+            depCargoFlight[row].set_cargo_start_load_time(ui->cargoStartTime->text().toStdString());
+            depCargoFlight[row].set_cargo_end_load_time(ui->cargoEndTime->text().toStdString());
+            depCargoFlight[row].set_cargo_max_weight(ui->maxWeight->value());
+        }
+        catch (flightException& e) {
+            e.showMessage();
+            return;
+        }
         this->done(0);
     }else {
         auto& buffer = depCargoFlight.emplace_back();
-        buffer.set_flight_number(ui->flightnumber->text().toStdString());
-        buffer.set_aircraft_type(ui->aircrafttype->text().toStdString());
-        buffer.set_time(ui->time->text().toStdString());
-        buffer.set_runway(ui->runway->text().toStdString());
-        buffer.set_destination(ui->destination->text().toStdString());
-        buffer.set_status(ui->status->text().toStdString());
-        buffer.set_fuel_status(ui->fuelStatus->text().toStdString());
-        buffer.set_aircraft_status(ui->aircraftStatus->text().toStdString());
-        buffer.set_fuel_status(ui->fuelStatus->text().toStdString());
-        buffer.set_is_depart(ui->isDepart->isChecked());
-        buffer.set_aircraft_status(ui->aircraftStatus->text().toStdString());
-        buffer.set_is_cargo_loaded(ui->cargoLoadded->isChecked());
-        buffer.set_cargo_type(ui->type->text().toStdString());
-        buffer.set_cargo_start_load_time(ui->cargoStartTime->text().toStdString());
-        buffer.set_cargo_end_load_time(ui->cargoEndTime->text().toStdString());
-        buffer.set_cargo_max_weight(ui->maxWeight->value());
+        try {
+            buffer.set_flight_number(ui->flightnumber->text().toStdString());
+            buffer.set_aircraft_type(ui->aircrafttype->text().toStdString());
+            buffer.set_time(ui->time->text().toStdString());
+            buffer.set_runway(ui->runway->text().toStdString());
+            buffer.set_destination(ui->destination->text().toStdString());
+            buffer.set_status(ui->status->text().toStdString());
+            buffer.set_fuel_status(ui->fuelStatus->text().toStdString());
+            buffer.set_aircraft_status(ui->aircraftStatus->text().toStdString());
+            buffer.set_fuel_status(ui->fuelStatus->text().toStdString());
+            buffer.set_is_depart(ui->isDepart->isChecked());
+            buffer.set_aircraft_status(ui->aircraftStatus->text().toStdString());
+            buffer.set_is_cargo_loaded(ui->cargoLoadded->isChecked());
+            buffer.set_cargo_type(ui->type->text().toStdString());
+            buffer.set_cargo_start_load_time(ui->cargoStartTime->text().toStdString());
+            buffer.set_cargo_end_load_time(ui->cargoEndTime->text().toStdString());
+            buffer.set_cargo_max_weight(ui->maxWeight->value());
+        }
+        catch (flightException& e) {
+            e.showMessage();
+            return;
+        }
         this->done(0);
     }
 }

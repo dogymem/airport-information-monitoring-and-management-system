@@ -8,6 +8,7 @@
 
 #include <QMessageBox>
 
+#include "Exception.h"
 #include "ui_passengerRegWindow.h"
 
 
@@ -55,22 +56,32 @@ passengerRegWindow::~passengerRegWindow() {
 void passengerRegWindow::on_addButton_clicked() {
     backUpPassengers.push(passengers);
     Passenger buffer;
-    buffer.set_name(ui->name->text().toStdString());
-    buffer.set_surname(ui->surname->text().toStdString());
-    buffer.set_middle_name(ui->middle->text().toStdString());
-    buffer.set_age(ui->Age->text().toInt());
-    buffer.set_pass_num(ui->passNum->text().toStdString());
-    buffer.set_pass_expiry_date(ui->passDate->text().toStdString());
-    buffer.set_nationality(ui->nationality->text().toStdString());
-    buffer.set_email(ui->email->text().toStdString());
-    buffer.set_phone(ui->phone->text().toStdString());
-    buffer.set_visa_num(ui->visaNum->text().toStdString());
-    buffer.set_has_travel_insurance(ui->travelInsurance->isChecked());
-    buffer.set_requires_special_assistance(ui->assistance->isChecked());
-    buffer.set_passenger_class(ui->passengerClass->text().toStdString());
-    buffer.set_seat(ui->seat->text().toStdString());
-    buffer.set_ticket_number(ui->ticketNumber->text().toStdString());
-    buffer.set_bags(ui->bags->text().toInt());
+    try {
+        buffer.set_name(ui->name->text().toStdString());
+        buffer.set_surname(ui->surname->text().toStdString());
+        buffer.set_middle_name(ui->middle->text().toStdString());
+        buffer.set_age(ui->Age->text().toInt());
+        buffer.set_pass_num(ui->passNum->text().toStdString());
+        buffer.set_pass_expiry_date(ui->passDate->text().toStdString());
+        buffer.set_nationality(ui->nationality->text().toStdString());
+        buffer.set_email(ui->email->text().toStdString());
+        buffer.set_phone(ui->phone->text().toStdString());
+        buffer.set_visa_num(ui->visaNum->text().toStdString());
+        buffer.set_has_travel_insurance(ui->travelInsurance->isChecked());
+        buffer.set_requires_special_assistance(ui->assistance->isChecked());
+        buffer.set_passenger_class(ui->passengerClass->text().toStdString());
+        buffer.set_seat(ui->seat->text().toStdString());
+        buffer.set_ticket_number(ui->ticketNumber->text().toStdString());
+        buffer.set_bags(ui->bags->text().toInt());
+    }
+    catch (humanException& e) {
+        e.showMessage();
+        return;
+    }
+    catch (passengerException& e) {
+        e.showMessage();
+        return;
+    }
     passengers.push_back(buffer);
     vectorToTable();
     ui->name->clear();

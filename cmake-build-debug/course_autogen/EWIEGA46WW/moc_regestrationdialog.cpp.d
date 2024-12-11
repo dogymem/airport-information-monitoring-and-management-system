@@ -1,5 +1,5 @@
-/Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/cmake-build-debug/course_autogen/EWIEGA46WW/moc_regestrationdialog.cpp: /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/regestrationdialog.h \
-  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/cours/new/course/cmake-build-debug/course_autogen/moc_predefs.h \
+/Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/cmake-build-debug/course_autogen/EWIEGA46WW/moc_regestrationdialog.cpp: /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/regestrationdialog.h \
+  /Users/egortomasev/Desktop/Учеба/term3/high\ level\ programing/cours/new/course/cmake-build-debug/course_autogen/moc_predefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h \

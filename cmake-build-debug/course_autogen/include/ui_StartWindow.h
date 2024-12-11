@@ -33,6 +33,7 @@ public:
     QAction *actionSettings;
     QAction *actionUndo;
     QAction *actionGen;
+    QAction *actionUndo_2;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTableWidget *tableWidget;
@@ -68,6 +69,9 @@ public:
         actionUndo->setEnabled(true);
         actionGen = new QAction(StartWindow);
         actionGen->setObjectName("actionGen");
+        actionUndo_2 = new QAction(StartWindow);
+        actionUndo_2->setObjectName("actionUndo_2");
+        actionUndo_2->setEnabled(true);
         centralwidget = new QWidget(StartWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -239,8 +243,7 @@ public:
         menubar->addAction(menuEdit->menuAction());
         menuOptions->addAction(actionRegestration);
         menuOptions->addAction(actionSettings);
-        menuEdit->addAction(actionUndo);
-        menuEdit->addAction(actionGen);
+        menuEdit->addAction(actionUndo_2);
 
         retranslateUi(StartWindow);
 
@@ -263,6 +266,7 @@ public:
         actionUndo->setShortcut(QCoreApplication::translate("StartWindow", "Ctrl+Z", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionGen->setText(QCoreApplication::translate("StartWindow", "Gen", nullptr));
+        actionUndo_2->setText(QCoreApplication::translate("StartWindow", "Undo", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("StartWindow", "Passenger flights", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);

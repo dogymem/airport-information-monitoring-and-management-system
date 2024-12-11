@@ -8,6 +8,7 @@
 
 #include <QMessageBox>
 
+#include "Exception.h"
 #include "ui_crewregdialog.h"
 
 
@@ -54,17 +55,26 @@ void crewregdialog::addActivation() {
 void crewregdialog::on_addButton_clicked() {
     backUpCrew.push(crew);
     CrewMember buffer;
-    buffer.set_name(ui->name->text().toStdString());
-    buffer.set_surname(ui->surname->text().toStdString());
-    buffer.set_middle_name(ui->middle->text().toStdString());
-    buffer.set_age(ui->Age->text().toInt());
-    buffer.set_pass_num(ui->passNum->text().toStdString());
-    buffer.set_pass_expiry_date(ui->passDate->text().toStdString());
-    buffer.set_nationality(ui->nationality->text().toStdString());
-    buffer.set_email(ui->email->text().toStdString());
-    buffer.set_phone(ui->phone->text().toStdString());
-    buffer.set_languages(ui->language->text().toStdString());
-    buffer.set_specialization(ui->specialization->text().toStdString());
+    try {
+        buffer.set_name(ui->name->text().toStdString());
+        buffer.set_surname(ui->surname->text().toStdString());
+        buffer.set_middle_name(ui->middle->text().toStdString());
+        buffer.set_age(ui->Age->text().toInt());
+        buffer.set_pass_num(ui->passNum->text().toStdString());
+        buffer.set_pass_expiry_date(ui->passDate->text().toStdString());
+        buffer.set_nationality(ui->nationality->text().toStdString());
+        buffer.set_email(ui->email->text().toStdString());
+        buffer.set_phone(ui->phone->text().toStdString());
+        buffer.set_languages(ui->language->text().toStdString());
+        buffer.set_specialization(ui->specialization->text().toStdString());
+    }catch(humanException& e) {
+        e.showMessage();
+        return;
+    }
+    catch(crewException& e) {
+        e.showMessage();
+        return;
+    }
     crew.push_back(buffer);
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
