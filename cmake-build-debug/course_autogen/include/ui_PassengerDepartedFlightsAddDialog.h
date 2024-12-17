@@ -158,7 +158,7 @@ public:
 
     void retranslateUi(QDialog *PassengerDepartedFlightsAddDialog)
     {
-        PassengerDepartedFlightsAddDialog->setWindowTitle(QCoreApplication::translate("PassengerDepartedFlightsAddDialog", "PassengerDepartedFlightsAddDialog", nullptr));
+        PassengerDepartedFlightsAddDialog->setWindowTitle(QCoreApplication::translate("PassengerDepartedFlightsAddDialog", "Add flight", nullptr));
         aircrafttype->setPlaceholderText(QCoreApplication::translate("PassengerDepartedFlightsAddDialog", "Aircraft type", nullptr));
         fuelStatus->setPlaceholderText(QCoreApplication::translate("PassengerDepartedFlightsAddDialog", "Fuel status", nullptr));
         status->setText(QString());

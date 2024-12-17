@@ -37,7 +37,7 @@ public:
     }
 
     T pop() {
-        if (node == nullptr) {
+        if (this->begin()==this->end()) {
             throw StackException("There is no more undoes");
         }
         auto bufValue = node->value;
@@ -50,7 +50,41 @@ public:
     T pick() {
         return this->node->value;
     }
+
+    class Iterator {
+    private:
+        StackNode<T>* current;
+
+    public:
+        explicit Iterator(StackNode<T>* start) : current(start) {}
+
+        // Перегрузка оператора разыменования
+        T& operator*() {
+            return current->data;
+        }
+
+        // Перегрузка оператора инкремента
+        Iterator& operator++() {
+            if (current) {
+                current = current->next;
+            }
+            return *this;
+        }
+
+        // Операторы сравнения
+        bool operator==(const Iterator& other) const {
+            return current == other.current;
+        }
+    };
+
+    Iterator begin() {
+        return Iterator(node);
+    }
+    Iterator end() {
+        return Iterator(nullptr);
+    }
 };
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class StartWindow; }

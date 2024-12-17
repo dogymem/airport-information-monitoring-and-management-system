@@ -137,8 +137,8 @@ void passengerRegWindow::addActivation() {
 void passengerRegWindow::onUndoClick() {
     try {
         passengers = backUpPassengers.pop();
-    }catch(const char*) {
-        //qmsg
+    }catch(StackException& e) {
+        e.showMessage();
     }
     vectorToTable();
 }

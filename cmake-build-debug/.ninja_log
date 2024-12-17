@@ -1,91 +1,46 @@
 # ninja log v6
-5169	10698	1733906522874279192	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	f9494a32688b48f7
-349	4514	1733943275031797801	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
-348	4640	1733898843968266692	CMakeFiles/course.dir/logindialog.cpp.o	240b2275f41e5448
-350	4939	1733943275032953204	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
-351	3912	1733943275033448314	CMakeFiles/course.dir/Exception.cpp.o	b3bf9183b706023b
-49	347	1733943274732198551	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-49	347	1733943274732198551	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-49	347	1733943274732198551	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
-349	4978	1733943275031407421	CMakeFiles/course.dir/passengerregwindow.cpp.o	e13aa647b49fc880
-18	123	1732083528581402715	CMakeFiles/clean.additional	c67978ad94b3aa4b
-348	5917	1733943275030446170	CMakeFiles/course.dir/StartWindow.cpp.o	e5febc80c5f03dc9
-348	4361	1733943275030921782	CMakeFiles/course.dir/clases.cpp.o	c91b87ac7f87ba2f
+32	98	1733988315395651162	course.app/Contents/Resources/icon.icns	100df61893975d74
+6290	6613	1733988236902351694	course	33ff983f2f073392
+3524	9091	1734046940201110757	CMakeFiles/course.dir/course_autogen/mocs_compilation.cpp.o	9fcaae869db9ab93
+245	4321	1734032924800202452	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	1ce9e14446876f80
+304	4068	1733988028068756642	CMakeFiles/course.dir/regestrationdialog.cpp.o	8acf52c3366304bc
+3524	10770	1734046940201611630	CMakeFiles/course.dir/StartWindow.cpp.o	e5febc80c5f03dc9
+4537	9204	1734031302184294911	CMakeFiles/course.dir/clases.cpp.o	c91b87ac7f87ba2f
+10770	11339	1734046947448030496	course.app/Contents/MacOS/course	f0e1d9c3d92ce320
+47	3523	1734046940135099000	course_autogen/timestamp	8350052dcbc7c7f9
+3527	9787	1734046940204224876	CMakeFiles/course.dir/pilotsregdialog.cpp.o	3a79320c152b470c
+362	5137	1734034509917733789	CMakeFiles/course.dir/cargodialog.cpp.o	4067ad78f899a01c
+13	559	1734174548540521695	build.ninja	8accc6742843ddf8
 123	157	1732083528686700255	clean	e625fed40095271c
-5173	10967	1733906522877665717	CMakeFiles/course.dir/cargodialog.cpp.o	4067ad78f899a01c
-54	713	1733900569196260245	build.ninja	8accc6742843ddf8
-49	347	1733943274732198551	course_autogen/timestamp	8350052dcbc7c7f9
-350	4976	1733943275032440540	CMakeFiles/course.dir/pilotsregdialog.cpp.o	3a79320c152b470c
-5176	10566	1733906522881062876	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	2ce1f98f8730412b
-416	4575	1733941495524461004	CMakeFiles/course.dir/main.cpp.o	1dc2dc295355c52c
-5166	10146	1733906522871039881	CMakeFiles/course.dir/course_autogen/mocs_compilation.cpp.o	9fcaae869db9ab93
-5174	10696	1733906522879408366	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	1ce9e14446876f80
-349	4634	1733898843969217800	CMakeFiles/course.dir/regestrationdialog.cpp.o	8acf52c3366304bc
-5917	6219	1733943280599785854	course	33ff983f2f073392
-49	338	1733943640052548949	course_autogen/timestamp	8350052dcbc7c7f9
-49	338	1733943640052548949	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-49	338	1733943640052548949	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
-49	338	1733943640052548949	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-342	3932	1733943640345183287	CMakeFiles/course.dir/Exception.cpp.o	b3bf9183b706023b
-339	4351	1733943640342976300	CMakeFiles/course.dir/clases.cpp.o	c91b87ac7f87ba2f
-341	4554	1733943640344008279	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
-341	4951	1733943640344841437	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
-341	4971	1733943640344431347	CMakeFiles/course.dir/pilotsregdialog.cpp.o	3a79320c152b470c
-340	4990	1733943640343581876	CMakeFiles/course.dir/passengerregwindow.cpp.o	e13aa647b49fc880
-339	5959	1733943640342051895	CMakeFiles/course.dir/StartWindow.cpp.o	e5febc80c5f03dc9
-5959	6265	1733943645962502191	course	33ff983f2f073392
-60	356	1733944921813875397	course_autogen/timestamp	8350052dcbc7c7f9
-60	356	1733944921813875397	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-60	356	1733944921813875397	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
-60	356	1733944921813875397	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-361	4856	1733944922115288167	CMakeFiles/course.dir/Exception.cpp.o	b3bf9183b706023b
-358	5413	1733944922111648198	CMakeFiles/course.dir/clases.cpp.o	c91b87ac7f87ba2f
-361	5487	1733944922114871855	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	2ce1f98f8730412b
-359	5552	1733944922113036927	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
-360	5598	1733944922114479497	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	1ce9e14446876f80
-359	5666	1733944922112648196	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	f9494a32688b48f7
-359	5981	1733944922113388972	CMakeFiles/course.dir/pilotsregdialog.cpp.o	3a79320c152b470c
-358	5983	1733944922112169607	CMakeFiles/course.dir/passengerregwindow.cpp.o	e13aa647b49fc880
-360	5993	1733944922113974257	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
-357	6943	1733944922111206430	CMakeFiles/course.dir/StartWindow.cpp.o	e5febc80c5f03dc9
-6943	7251	1733944928697008339	course	33ff983f2f073392
-59	361	1733945463346569121	course_autogen/timestamp	8350052dcbc7c7f9
-59	361	1733945463346569121	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-59	361	1733945463346569121	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
-59	361	1733945463346569121	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-367	5295	1733945463653835611	CMakeFiles/course.dir/Exception.cpp.o	b3bf9183b706023b
-362	5966	1733945463649343841	CMakeFiles/course.dir/clases.cpp.o	c91b87ac7f87ba2f
-366	6041	1733945463653370458	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	2ce1f98f8730412b
-364	6067	1733945463651281095	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
-366	6150	1733945463652846460	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	1ce9e14446876f80
-364	6206	1733945463650626157	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	f9494a32688b48f7
-365	6416	1733945463652507487	CMakeFiles/course.dir/cargodialog.cpp.o	4067ad78f899a01c
-365	6468	1733945463652161328	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
-365	6511	1733945463651732599	CMakeFiles/course.dir/pilotsregdialog.cpp.o	3a79320c152b470c
-363	6543	1733945463649921393	CMakeFiles/course.dir/passengerregwindow.cpp.o	e13aa647b49fc880
-362	7481	1733945463648795227	CMakeFiles/course.dir/StartWindow.cpp.o	e5febc80c5f03dc9
-7482	7785	1733945470768413011	course	33ff983f2f073392
-66	3002	1733947838022929000	course_autogen/timestamp	8350052dcbc7c7f9
-66	3002	1733947838022929000	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-66	3002	1733947838022929000	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
-66	3002	1733947838022929000	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
+4536	8955	1734031302183698949	CMakeFiles/course.dir/main.cpp.o	1dc2dc295355c52c
+3528	9279	1734046940205205877	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	2ce1f98f8730412b
+3525	9258	1734046940202731958	CMakeFiles/course.dir/logindialog.cpp.o	240b2275f41e5448
+3527	9769	1734046940204679993	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
+18	123	1732083528581402715	CMakeFiles/clean.additional	c67978ad94b3aa4b
+3525	9789	1734046940202206637	CMakeFiles/course.dir/passengerregwindow.cpp.o	e13aa647b49fc880
+47	3523	1734046940135099000	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
 3010	9234	1733947838098176489	CMakeFiles/course.dir/Exception.cpp.o	b3bf9183b706023b
-3004	9380	1733947838092427023	CMakeFiles/course.dir/main.cpp.o	1dc2dc295355c52c
-3003	9416	1733947838091854862	CMakeFiles/course.dir/course_autogen/mocs_compilation.cpp.o	9fcaae869db9ab93
-3005	9722	1733947838093559139	CMakeFiles/course.dir/clases.cpp.o	c91b87ac7f87ba2f
-3009	9790	1733947838097532353	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	2ce1f98f8730412b
-3006	9815	1733947838094835245	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
-3008	9909	1733947838096936369	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	1ce9e14446876f80
-3006	9985	1733947838094281851	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	f9494a32688b48f7
-3008	10170	1733947838096451715	CMakeFiles/course.dir/cargodialog.cpp.o	4067ad78f899a01c
-3007	10244	1733947838095413894	CMakeFiles/course.dir/pilotsregdialog.cpp.o	3a79320c152b470c
-3007	10257	1733947838095944750	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
-3006	10276	1733947838093938553	CMakeFiles/course.dir/passengerregwindow.cpp.o	e13aa647b49fc880
-38	379	1733947856555860551	course_autogen/timestamp	8350052dcbc7c7f9
-38	379	1733947856555860551	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-38	379	1733947856555860551	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
-38	379	1733947856555860551	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
-381	4588	1733947856898977891	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
-382	4977	1733947856899571468	CMakeFiles/course.dir/crewregdialog.cpp.o	e1802d6b7dcbb630
-380	5966	1733947856898321534	CMakeFiles/course.dir/StartWindow.cpp.o	e5febc80c5f03dc9
-5966	6531	1733947862483983000	course	33ff983f2f073392
+3526	9332	1734046940203818249	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	76e474cf70013240
+47	3523	1734046940135099000	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
+47	3523	1734046940135099000	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
+3526	9434	1734046940203296250	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	f9494a32688b48f7
+34	5920	1734174591824322000	course_autogen/timestamp	8350052dcbc7c7f9
+34	5920	1734174591824322000	course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
+34	5920	1734174591824322000	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/timestamp	8350052dcbc7c7f9
+34	5920	1734174591824322000	/Users/egortomasev/Desktop/Учеба/term3/high level programing/cours/new/course/cmake-build-debug/course_autogen/mocs_compilation.cpp	8350052dcbc7c7f9
+5922	12886	1734174591894378298	CMakeFiles/course.dir/main.cpp.o	dfd60086baf775fc
+5922	12920	1734174591893847024	CMakeFiles/course.dir/course_autogen/mocs_compilation.cpp.o	1f5be5bbfe4d83d3
+5923	13231	1734174591895130417	CMakeFiles/course.dir/clases.cpp.o	c024799ca81e200d
+5926	13248	1734174591897496802	CMakeFiles/course.dir/regestrationdialog.cpp.o	6bfa07d72b7796c1
+5924	13250	1734174591896088994	CMakeFiles/course.dir/logindialog.cpp.o	a3bb1a70c4a35a8d
+5928	13360	1734174591900324552	CMakeFiles/course.dir/departedcargoflightsadddialog.cpp.o	578fb3c43038055d
+5925	13391	1734174591896953841	CMakeFiles/course.dir/passengerdepartedflightsadddialog.cpp.o	bb491b8ba0c2abfb
+5928	13494	1734174591899815440	CMakeFiles/course.dir/cargoarrivedflightsadddialog.cpp.o	c4b78cd2187875b5
+5925	13569	1734174591896517105	CMakeFiles/course.dir/passengerarrivedflightsadddialog.cpp.o	edaf55b1e8cbe848
+5927	13748	1734174591899206074	CMakeFiles/course.dir/cargodialog.cpp.o	b5feb46c26648b0c
+5926	13850	1734174591898109127	CMakeFiles/course.dir/pilotsregdialog.cpp.o	bd301f21c7481d75
+5927	13852	1734174591898626024	CMakeFiles/course.dir/crewregdialog.cpp.o	371236750ee094b1
+5924	13866	1734174591895593750	CMakeFiles/course.dir/passengerregwindow.cpp.o	9aaa63922fd9f4e2
+5923	14840	1734174591894785940	CMakeFiles/course.dir/StartWindow.cpp.o	bf0b90733663ca0b
+12896	16254	1734174598868118875	CMakeFiles/course.dir/Exception.cpp.o	c4fdcc8424f156c7
+16254	16544	1734174602225564331	course.app/Contents/MacOS/course	ae196f51f4555105

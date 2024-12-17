@@ -6,6 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+
 set(CMAKE_PREFIX_PATH "/Users/egortomasev/Qt/6.8.0/macos")
 
 find_package(Qt6 COMPONENTS
@@ -52,10 +53,18 @@ add_executable(course main.cpp
         departedcargoflightsadddialog.ui
         Exception.cpp
         Exception.h
+        Resources/icon.icns
 )
 target_link_libraries(course
         Qt::Core
         Qt::Gui
         Qt::Widgets
+)
+
+set(MACOSX_BUNDLE_ICON_FILE icon.icns)
+set_source_files_properties(Resources/icon.icns PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+
+set_target_properties(course PROPERTIES
+        MACOSX_BUNDLE TRUE
 )
 

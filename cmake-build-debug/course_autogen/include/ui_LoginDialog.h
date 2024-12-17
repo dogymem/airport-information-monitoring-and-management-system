@@ -80,7 +80,7 @@ public:
 
     void retranslateUi(QDialog *LoginDialog)
     {
-        LoginDialog->setWindowTitle(QCoreApplication::translate("LoginDialog", "LoginDialog", nullptr));
+        LoginDialog->setWindowTitle(QCoreApplication::translate("LoginDialog", "Authorization", nullptr));
 #if QT_CONFIG(accessibility)
         login->setAccessibleName(QString());
 #endif // QT_CONFIG(accessibility)

@@ -268,7 +268,7 @@ public:
 
     void retranslateUi(QDialog *PilotsRegDialog)
     {
-        PilotsRegDialog->setWindowTitle(QCoreApplication::translate("PilotsRegDialog", "MainWindow", nullptr));
+        PilotsRegDialog->setWindowTitle(QCoreApplication::translate("PilotsRegDialog", "Pilots", nullptr));
         actionUndo->setText(QCoreApplication::translate("PilotsRegDialog", "Undo", nullptr));
 #if QT_CONFIG(shortcut)
         actionUndo->setShortcut(QCoreApplication::translate("PilotsRegDialog", "Ctrl+Z", nullptr));

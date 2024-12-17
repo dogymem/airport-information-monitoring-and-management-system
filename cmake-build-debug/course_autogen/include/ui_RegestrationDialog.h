@@ -59,7 +59,7 @@ public:
 
     void retranslateUi(QDialog *RegestrationDialog)
     {
-        RegestrationDialog->setWindowTitle(QCoreApplication::translate("RegestrationDialog", "RegestrationDialog", nullptr));
+        RegestrationDialog->setWindowTitle(QCoreApplication::translate("RegestrationDialog", "Regestration", nullptr));
         password->setPlaceholderText(QCoreApplication::translate("RegestrationDialog", "Password", nullptr));
         login->setPlaceholderText(QCoreApplication::translate("RegestrationDialog", "Login", nullptr));
         signup->setText(QCoreApplication::translate("RegestrationDialog", "Sign up", nullptr));

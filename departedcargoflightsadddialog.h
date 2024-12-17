@@ -1,7 +1,3 @@
-//
-// Created by Егор Томашев on 25.11.24.
-//
-
 #ifndef DEPARTEDCARGOFLIGHTSADDDIALOG_H
 #define DEPARTEDCARGOFLIGHTSADDDIALOG_H
 

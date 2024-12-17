@@ -1,7 +1,3 @@
-//
-// Created by Егор Томашев on 12.11.24.
-//
-
 #ifndef PILOTSREGDIALOG_H
 #define PILOTSREGDIALOG_H
 

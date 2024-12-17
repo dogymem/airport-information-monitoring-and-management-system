@@ -241,7 +241,7 @@ public:
 
     void retranslateUi(QDialog *crewregdialog)
     {
-        crewregdialog->setWindowTitle(QCoreApplication::translate("crewregdialog", "crewregdialog", nullptr));
+        crewregdialog->setWindowTitle(QCoreApplication::translate("crewregdialog", "Crew", nullptr));
         actionUndo->setText(QCoreApplication::translate("crewregdialog", "Undo", nullptr));
 #if QT_CONFIG(shortcut)
         actionUndo->setShortcut(QCoreApplication::translate("crewregdialog", "Ctrl+Z", nullptr));

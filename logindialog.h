@@ -4,8 +4,8 @@
 
 #ifndef LOGINDIALOG_H
 #define LOGINDIALOG_H
-#define BASICLOGIN "VLADIMIRPUTIN"
-#define BASICPASSWORD "MOLODETS"
+#define BASICLOGIN "default"
+#define BASICPASSWORD "secret"
 
 #include <QDialog>
 

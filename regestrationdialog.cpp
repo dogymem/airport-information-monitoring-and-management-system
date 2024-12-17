@@ -26,30 +26,34 @@ void RegestrationDialog::onSignUpButtonClick() {
         QMessageBox::critical(this, "Error", "Login or password is empty");
     }
     else {
+        string homePath(getenv("HOME"));
+        filesystem::create_directory(homePath+"/Documents/airportSystem");
+        string currentPath(homePath+"/Documents/airportSystem");
+        
         login = ui->login->text().toStdString();
         hash = std::hash<std::string>{}(ui->password->text().toStdString());
-        std::ifstream in("credentials.bin", std::ios::binary | std::ios::ate);
+        std::ifstream in(currentPath+"/credentials.bin", std::ios::binary | std::ios::ate);
         int num = 0;
         if (in.tellg()==EOF) {
             in.close();
             size_t size = 1;
-            std::ofstream out("credentials.bin", std::ios::binary | ios::out);
+            std::ofstream out(currentPath+"/credentials.bin", std::ios::binary | ios::out);
             out.write((const char*) &size, sizeof(size));
             out.close();
         }
         else {
             size_t size;
             in.close();
-            std::ifstream in("credentials.bin", ios::binary | ios::in);
+            std::ifstream in(currentPath+"/credentials.bin", ios::binary | ios::in);
             in.read((char*)&size, sizeof(size));
             in.close();
             size++;
-            std::fstream out("credentials.bin", std::ios::binary | ios::in | ios::out);
+            std::fstream out(currentPath+"/credentials.bin", std::ios::binary | ios::in | ios::out);
             out.seekp(0,ios_base::beg);
             out.write((const char*) &size, sizeof(size));
             out.close();
         }
-        std::ofstream out("credentials.bin", std::ios::binary | ios::app);
+        std::ofstream out(currentPath+"/credentials.bin", std::ios::binary | ios::app);
         out.seekp(0,ios_base::end);
         out.write(login.c_str(), login.size());
         out.write("\0", 1);

@@ -14,9 +14,8 @@
 CargoArrivedFlightsAddDialog::CargoArrivedFlightsAddDialog(vector<ArrivingCargoFlight>& arrCargoFlights,bool isEditing,int row,QWidget *parent) :
     QDialog(parent), ui(new Ui::CargoArrivedFlightsAddDialog), arrCargoFlights(arrCargoFlights), isEditing(isEditing), row(row) {
     ui->setupUi(this);
-    ui->time->setMinimumDate(QDate::currentDate().addDays(-3));
     ui->time->setDateTime(QDateTime::currentDateTime());
-    ui->time->setMaximumDate(QDate::currentDate().addDays(3));
+
     connect(ui->AddButton, &QPushButton::clicked, this, &CargoArrivedFlightsAddDialog::onAddButtonClick);
     if (isEditing) {
         ui->flightnumber->setText(QString::fromStdString(arrCargoFlights[row].get_flight_number()));

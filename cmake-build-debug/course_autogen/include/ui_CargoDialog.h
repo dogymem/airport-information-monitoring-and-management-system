@@ -192,7 +192,7 @@ public:
 
     void retranslateUi(QDialog *CargoDialog)
     {
-        CargoDialog->setWindowTitle(QCoreApplication::translate("CargoDialog", "CargoDialog", nullptr));
+        CargoDialog->setWindowTitle(QCoreApplication::translate("CargoDialog", "Cargo", nullptr));
         actionUndo->setText(QCoreApplication::translate("CargoDialog", "Undo", nullptr));
 #if QT_CONFIG(shortcut)
         actionUndo->setShortcut(QCoreApplication::translate("CargoDialog", "Ctrl+Z", nullptr));

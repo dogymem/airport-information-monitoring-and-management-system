@@ -1,7 +1,3 @@
-//
-// Created by Егор Томашев on 13.11.24.
-//
-
 #ifndef CREWREGDIALOG_H
 #define CREWREGDIALOG_H
 

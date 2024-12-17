@@ -282,7 +282,7 @@ public:
 
     void retranslateUi(QDialog *passengerRegWindow)
     {
-        passengerRegWindow->setWindowTitle(QCoreApplication::translate("passengerRegWindow", "MainWindow", nullptr));
+        passengerRegWindow->setWindowTitle(QCoreApplication::translate("passengerRegWindow", "Passengers", nullptr));
         actionUndo->setText(QCoreApplication::translate("passengerRegWindow", "Undo", nullptr));
 #if QT_CONFIG(shortcut)
         actionUndo->setShortcut(QCoreApplication::translate("passengerRegWindow", "Ctrl+Z", nullptr));

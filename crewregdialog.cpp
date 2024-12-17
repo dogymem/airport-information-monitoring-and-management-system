@@ -42,8 +42,8 @@ crewregdialog::~crewregdialog() {
 void crewregdialog::onUndoClick() {
     try {
         crew = backUpCrew.pop();
-    }catch(const char*) {
-        //qmsg
+    }catch(StackException& e) {
+        e.showMessage();
     }
     vectorToTable();
 }

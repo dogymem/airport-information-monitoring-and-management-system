@@ -28,7 +28,10 @@ bool LoginDialog::credentialsCheck() {
     string bufLogin;
     size_t bufHash;
     size_t size;
-    std::ifstream in("credentials.bin", std::ios::binary);
+    string path(getenv("HOME"));
+    filesystem::create_directory(path+"/Documents"+"/airportSystem");
+    filesystem::create_directory(path+"/Documents"+"/airportSystem");
+    std::ifstream in(path+"/Documents/airportSystem/credentials.bin", std::ios::binary);
     if (in.is_open()) {
         in.read((char*)&size, sizeof(size));
         for(int i=0;i<size;i++) {

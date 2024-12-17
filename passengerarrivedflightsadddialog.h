@@ -1,7 +1,3 @@
-//
-// Created by Егор Томашев on 11.11.24.
-//
-
 #ifndef PASSENGERFLIGHTSADDDIALOG_H
 #define PASSENGERFLIGHTSADDDIALOG_H
 

@@ -8,9 +8,7 @@ PassengerDepartedFlightsAddDialog::PassengerDepartedFlightsAddDialog(vector<Depa
                                                                      QWidget *parent) : QDialog(parent), ui(new Ui::PassengerDepartedFlightsAddDialog), depPassFlight(depPassFlight), isEditing(isEditing),row(row) {
     ui->setupUi(this);
     connect(ui->AddButton, &QPushButton::clicked, this, &PassengerDepartedFlightsAddDialog::onAddButtonClick);
-    ui->time->setMinimumDate(QDate::currentDate().addDays(-3));
     ui->time->setDateTime(QDateTime::currentDateTime());
-    ui->time->setMaximumDate(QDate::currentDate().addDays(3));
     ui->boardingStartTime->setTime(QTime::currentTime());
     ui->boardingEndTime->setTime(QTime::currentTime());
     ui->checkInStartTime->setTime(QTime::currentTime());

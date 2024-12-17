@@ -36,8 +36,8 @@ void CargoDialog::addActivation() {
 void CargoDialog::onUndoClick() {
     try {
         cargo = backUpCargo.pop();
-    }catch(const char*) {
-        //qmsg
+    }catch(StackException& e) {
+        e.showMessage();
     }
     vectorToTable();
 }
@@ -75,8 +75,8 @@ void CargoDialog::vectorToTable() {
         ui->tableWidget->setItem(i,4,new QTableWidgetItem(QString::number(cargo[i].get_weight())));
         auto *deletebutton = new QPushButton(QIcon::fromTheme(QIcon::ThemeIcon::ListRemove),"Delete");
         connect(deletebutton, &QPushButton::clicked, this, &CargoDialog::onDeleteButtonClicked);
-        ui->tableWidget->setCellWidget(ui->tableWidget->rowCount() - 1, 5, deletebutton);
-        deletebutton->setProperty("row", ui->tableWidget->rowCount() - 1);
+        ui->tableWidget->setCellWidget(i, 5, deletebutton);
+        deletebutton->setProperty("row", i);
     }
 }
 

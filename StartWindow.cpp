@@ -2,12 +2,15 @@
 #include "passengerregwindow.h"
 #include "ui_StartWindow.h"
 #include <QMessageBox>
+#include <QTimer>
 #include <fstream>
+#include <qdatetime.h>
 
 #include "cargoarrivedflightsadddialog.h"
 #include "cargodialog.h"
 #include "crewregdialog.h"
 #include "departedcargoflightsadddialog.h"
+#include "Exception.h"
 #include "logindialog.h"
 #include "passengerarrivedflightsadddialog.h"
 #include "passengerdepartedflightsadddialog.h"
@@ -15,139 +18,143 @@
 #include "regestrationdialog.h"
 template <typename T>
 void fileRead(T& flights) {
-    ifstream in;
-    if constexpr (std::is_same_v<T, vector<ArrivingPassengerFlight> >) {
-        in.open("/Users/egortomasev/Desktop/ArrivingPassengerFlight.bin", std::ios::binary);
-    }
-    if constexpr (std::is_same_v<T, vector<ArrivingCargoFlight> >) {
-        in.open("/Users/egortomasev/Desktop/ArrivingCargoFlight.bin", std::ios::binary);
-    }
-    if constexpr (std::is_same_v<T, vector<DepartingPassengerFlight> >) {
-        in.open("/Users/egortomasev/Desktop/DepartingPassengerFlight.bin", std::ios::binary);
-    }
-    if constexpr (std::is_same_v<T, vector<DepartingCargoFlight> >) {
-        in.open("/Users/egortomasev/Desktop/DepartingCargoFlight.bin", std::ios::binary);
-    }
-    int size = 0;
-
-    in.read(reinterpret_cast<char *>(&size), sizeof(size));
-    flights.resize(size);
-
-    for (auto &flight: flights) {
-        flight.set_flight_number(readString(in));
-        flight.set_aircraft_type(readString(in));
+        ifstream in;
+        string path(getenv("HOME"));
+        if constexpr (std::is_same_v<T, vector<ArrivingPassengerFlight> >) {
+            in.open(path+"/Documents/airportSystem/ArrivingPassengerFlight.bin", std::ios::binary);
+        }
+        if constexpr (std::is_same_v<T, vector<ArrivingCargoFlight> >) {
+            in.open(path+"/Documents/airportSystem/ArrivingCargoFlight.bin", std::ios::binary);
+        }
+        if constexpr (std::is_same_v<T, vector<DepartingPassengerFlight> >) {
+            in.open(path+"/Documents/airportSystem/DepartingPassengerFlight.bin", std::ios::binary);
+        }
+        if constexpr (std::is_same_v<T, vector<DepartingCargoFlight> >) {
+            in.open(path+"/Documents/airportSystem/DepartingCargoFlight.bin", std::ios::binary);
+        }
+        int size = 0;
 
         in.read(reinterpret_cast<char *>(&size), sizeof(size));
-        flight.set_number_of_staff(size);
+        flights.resize(size);
 
-        flight.set_time(readString(in));
-        flight.set_runway(readString(in));
+        for (auto &flight: flights) {
+            flight.set_flight_number(readString(in));
+            flight.set_aircraft_type(readString(in));
 
-        in.read(reinterpret_cast<char *>(&size), sizeof(size));
-        vector<Pilot> pilots(size);
-        pilotsRead(in, pilots);
-        flight.set_pilots(pilots);
+            in.read(reinterpret_cast<char *>(&size), sizeof(size));
+            flight.set_number_of_staff(size);
 
-        if constexpr (std::same_as<T, vector<ArrivingPassengerFlight> > || std::same_as<T, vector<ArrivingCargoFlight> >) {
-            flight.set_is_late_str(readString(in));
-            flight.set_departure(readString(in));
-            flight.set_customs_required_str(readString(in));
-            flight.set_is_connecting_flight_str(readString(in));
-            flight.set_is_emergency_landing_str(readString(in));
+            flight.set_time(readString(in));
+            flight.set_runway(readString(in));
 
-            if constexpr (std::same_as<T, vector<ArrivingPassengerFlight>>) {
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                flight.set_current_passenger_count(size);
-                flight.set_gate(readString(in));
-                flight.set_terminal(readString(in));
-                flight.set_is_bus_str(readString(in));
-                flight.set_baggage_claim_area(readString(in));
-                flight.set_special_assistance_required_str(readString(in));
-                flight.set_is_visa_str(readString(in));
-                flight.set_is_baggage_unloaded_str(readString(in));
+            in.read(reinterpret_cast<char *>(&size), sizeof(size));
+            vector<Pilot> pilots(size);
+            pilotsRead(in, pilots);
+            flight.set_pilots(pilots);
 
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                vector<Passenger> passengers(size);
-                passengersRead(in, passengers);
-                flight.set_passenger_list(passengers);
+            if constexpr (std::same_as<T, vector<ArrivingPassengerFlight> > || std::same_as<T, vector<ArrivingCargoFlight> >) {
+                flight.set_is_arrive_str(readString(in));
+                flight.set_is_late_str(readString(in));
+                flight.set_departure(readString(in));
+                flight.set_customs_required_str(readString(in));
+                flight.set_is_connecting_flight_str(readString(in));
+                flight.set_is_emergency_landing_str(readString(in));
 
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                std::vector<CrewMember> crewList(size);
-                crewRead(in, crewList);
-                flight.set_crew_list(crewList);
+                if constexpr (std::same_as<T, vector<ArrivingPassengerFlight>>) {
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    flight.set_current_passenger_count(size);
+                    flight.set_gate(readString(in));
+                    flight.set_terminal(readString(in));
+                    flight.set_is_bus_str(readString(in));
+                    flight.set_baggage_claim_area(readString(in));
+                    flight.set_special_assistance_required_str(readString(in));
+                    flight.set_is_visa_str(readString(in));
+                    flight.set_is_baggage_unloaded_str(readString(in));
+
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    vector<Passenger> passengers(size);
+                    passengersRead(in, passengers);
+                    flight.set_passenger_list(passengers);
+
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    std::vector<CrewMember> crewList(size);
+                    crewRead(in, crewList);
+                    flight.set_crew_list(crewList);
+                }
+                if constexpr (std::same_as<T, vector<ArrivingCargoFlight>>) {
+                    double weight;
+                    in.read(reinterpret_cast<char *>(&weight), sizeof(weight));
+                    flight.set_cargo_max_weight(weight);
+                    flight.set_cargo_type(readString(in));
+                    flight.set_is_cargo_unloaded_str(readString(in));
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    vector<Cargo> cargoes(size);
+                    cargoRead(in, cargoes);
+                    flight.set_cargo_list(cargoes);
+                }
             }
-            if constexpr (std::same_as<T, vector<ArrivingCargoFlight>>) {
-                double weight;
-                in.read(reinterpret_cast<char *>(&weight), sizeof(weight));
-                flight.set_cargo_max_weight(weight);
-                flight.set_cargo_type(readString(in));
-                flight.set_is_cargo_unloaded_str(readString(in));
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                vector<Cargo> cargoes(size);
-                cargoRead(in, cargoes);
-                flight.set_cargo_list(cargoes);
+            if constexpr (std::same_as<T, vector<DepartingPassengerFlight>> || std::same_as<T, vector<DepartingCargoFlight>>) {
+                flight.set_is_depart_str(readString(in));
+                flight.set_destination(readString(in));
+                flight.set_status(readString(in));
+                flight.set_fuel_status(readString(in));
+                flight.set_aircraft_status(readString(in));
+                if constexpr (std::same_as<T, vector<DepartingPassengerFlight>>) {
+                    flight.set_terminal(readString(in));
+                    flight.set_gate(readString(in));
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    flight.set_passenger_max_value(size);
+                    flight.set_check_in_start_time(readString(in));
+                    flight.set_check_in_end_time(readString(in));
+                    flight.set_boarding_start_time(readString(in));
+                    flight.set_boarding_end_time(readString(in));
+                    flight.set_is_baggage_loaded_str(readString(in));
+
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    vector<Passenger> passengers(size);
+                    passengersRead(in, passengers);
+                    flight.set_passenger_list(passengers);
+
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    std::vector<CrewMember> crewList(size);
+                    crewRead(in, crewList);
+                    flight.set_crew_list(crewList);
+                }
+                if constexpr (std::same_as<T, vector<DepartingCargoFlight> >) {
+                    double maxWeight;
+                    in.read(reinterpret_cast<char *>(&maxWeight), sizeof(maxWeight));
+                    flight.set_cargo_max_weight(maxWeight);
+                    flight.set_cargo_type(readString(in));
+                    flight.set_is_cargo_loaded_str(readString(in));
+                    flight.set_cargo_start_load_time(readString(in));
+                    flight.set_cargo_end_load_time(readString(in));
+
+                    in.read(reinterpret_cast<char *>(&size), sizeof(size));
+                    vector<Cargo> cargoes(size);
+                    cargoRead(in, cargoes);
+                    flight.set_cargo_list(cargoes);
+                }
             }
         }
-        if constexpr (std::same_as<T, vector<DepartingPassengerFlight>> || std::same_as<T, vector<DepartingCargoFlight>>) {
-            flight.set_is_depart_str(readString(in));
-            flight.set_destination(readString(in));
-            flight.set_status(readString(in));
-            flight.set_fuel_status(readString(in));
-            flight.set_aircraft_status(readString(in));
-            if constexpr (std::same_as<T, vector<DepartingPassengerFlight>>) {
-                flight.set_terminal(readString(in));
-                flight.set_gate(readString(in));
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                flight.set_passenger_max_value(size);
-                flight.set_check_in_start_time(readString(in));
-                flight.set_check_in_end_time(readString(in));
-                flight.set_boarding_start_time(readString(in));
-                flight.set_boarding_end_time(readString(in));
-                flight.set_is_baggage_loaded_str(readString(in));
+        in.close();
 
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                vector<Passenger> passengers(size);
-                passengersRead(in, passengers);
-                flight.set_passenger_list(passengers);
-
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                std::vector<CrewMember> crewList(size);
-                crewRead(in, crewList);
-                flight.set_crew_list(crewList);
-            }
-            if constexpr (std::same_as<T, vector<DepartingCargoFlight> >) {
-                double maxWeight;
-                in.read(reinterpret_cast<char *>(&maxWeight), sizeof(maxWeight));
-                flight.set_cargo_max_weight(maxWeight);
-                flight.set_cargo_type(readString(in));
-                flight.set_is_cargo_loaded_str(readString(in));
-                flight.set_cargo_start_load_time(readString(in));
-                flight.set_cargo_end_load_time(readString(in));
-
-                in.read(reinterpret_cast<char *>(&size), sizeof(size));
-                vector<Cargo> cargoes(size);
-                cargoRead(in, cargoes);
-                flight.set_cargo_list(cargoes);
-            }
-        }
-    }
-    in.close();
 }
 
 template<typename T>
 void fileWrite(T& flights) {
     ofstream out;
+    string path(getenv("HOME"));
     if constexpr (std::is_same_v<T, vector<ArrivingPassengerFlight> >) {
-        out.open("/Users/egortomasev/Desktop/ArrivingPassengerFlight.bin", std::ios::binary);
+        out.open(path+"/Documents/airportSystem/ArrivingPassengerFlight.bin", std::ios::binary);
     }
     if constexpr (std::is_same_v<T, vector<ArrivingCargoFlight> >) {
-        out.open("/Users/egortomasev/Desktop/ArrivingCargoFlight.bin", std::ios::binary);
+        out.open(path+"/Documents/airportSystem/ArrivingCargoFlight.bin", std::ios::binary);
     }
     if constexpr (std::is_same_v<T, vector<DepartingPassengerFlight> >) {
-        out.open("/Users/egortomasev/Desktop/DepartingPassengerFlight.bin", std::ios::binary);
+        out.open(path+"/Documents/airportSystem/DepartingPassengerFlight.bin", std::ios::binary);
     }
     if constexpr (std::is_same_v<T, vector<DepartingCargoFlight> >) {
-        out.open("/Users/egortomasev/Desktop/DepartingCargoFlight.bin", std::ios::binary);
+        out.open(path+"/Documents/airportSystem/DepartingCargoFlight.bin", std::ios::binary);
     }
     int size = static_cast<int>(flights.size());
     out.write(reinterpret_cast<const char *>(&size), sizeof(size));
@@ -163,6 +170,7 @@ void fileWrite(T& flights) {
         writeString(out, flight.get_runway());
         pilotsWrite(out, flight.get_pilots());
         if constexpr (std::same_as<T, vector<ArrivingPassengerFlight> > || std::same_as<T, vector<ArrivingCargoFlight> >) {
+            writeString(out, flight.get_is_arrive_str());
             writeString(out, flight.get_is_late_str());
             writeString(out, flight.get_departure());
             writeString(out, flight.get_customs_required_str());
@@ -230,7 +238,7 @@ StartWindow::StartWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::Star
     connect(ui->AddPassenerFlightsButton, &QPushButton::clicked, this, &StartWindow::onAddPassengerFlightsButtonClick);
     connect(ui->AddCargoFlightsButton, &QPushButton::clicked, this, &StartWindow::onAddCargoFlightsButtonClick);
     connect(ui->actionRegestration, &QAction::triggered, this, &StartWindow::onRegButtonClick);
-    connect(ui->actionUndo,&QAction::triggered, this, &StartWindow::onUndoButtonClick);
+    connect(ui->actionUndo_2,&QAction::triggered, this, &StartWindow::onUndoButtonClick);
     bool loggedIn = false;
     while (loggedIn == false) {
         LoginDialog loginDialog(loggedIn, permission);
@@ -245,10 +253,18 @@ StartWindow::StartWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::Star
         ui->AddCargoFlightsButton->setEnabled(true);
         ui->menuEdit->setEnabled(true);
     }
-    fileRead(arrPassFlights);
-    fileRead(depPassFlights);
-    fileRead(arrCargoFlights);
-    fileRead(depCargoFlights);
+    try {
+        fileRead(arrPassFlights);
+        fileRead(depPassFlights);
+        fileRead(arrCargoFlights);
+        fileRead(depCargoFlights);
+    }catch (...) {
+        QMessageBox msgBox;
+        msgBox.setText(QString::fromStdString("Error reading files"));
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.exec();
+        exit(1);
+    }
     onArrButtonClick();
 }
 
@@ -311,25 +327,34 @@ void StartWindow::onAddCargoFlightsButtonClick() {
 }
 
 void StartWindow::onUndoButtonClick() {
+    bool show;
     try {
         arrPassFlights=arrPassBackup.pop();
         fileWrite(arrPassFlights);
-    }catch(const char* errMsg){
+    }catch(StackException &e){
+        e.showMessage();
+        show = true;
     }
     try {
         depPassFlights=depPassBackup.pop();
         fileWrite(depPassFlights);
-    }catch(const char* errMsg){
+    }catch(StackException &e){
+        if (!show)
+            e.showMessage();
     }
     try {
         arrCargoFlights=arrCargoBackup.pop();
         fileWrite(arrCargoFlights);
-    }catch(const char* errMsg){
+    }catch(StackException &e){
+        if (!show)
+            e.showMessage();
     }
     try {
         depCargoFlights=depCargoBackup.pop();
         fileWrite(depCargoFlights);
-    }catch(const char* errMsg){
+    }catch(StackException &e){
+        if (!show)
+            e.showMessage();
     }
     vectorToTable();
 
@@ -356,6 +381,7 @@ void StartWindow::onPilotsButtonClicked() {
         pilotsDialog.exec();
         fileWrite(depCargoFlights);
     }
+    vectorToTable();
 }
 
 void StartWindow::onRegButtonClick() {
@@ -374,29 +400,21 @@ void StartWindow::onPassengersButtonClicked() {
         reg_window.exec();
         fileWrite(depPassFlights);
     }
+    vectorToTable();
 }
 
 void StartWindow::onCargoButtonClicked() {
-    if (sender()->property("type") == "arrPass") {
-        PilotsRegDialog pilotsDialog(arrPassFlights[sender()->property("row").toInt()].get_pilots());
-        pilotsDialog.exec();
-        fileWrite(arrPassFlights);
-    }
     if (sender()->property("type") == "arrCargo") {
         CargoDialog cargoDialog(arrCargoFlights[sender()->property("row").toInt()].get_cargo_list());
         cargoDialog.exec();
         fileWrite(arrCargoFlights);
     }
-    if (sender()->property("type") == "depPass") {
-        PilotsRegDialog pilotsDialog(depPassFlights[sender()->property("row").toInt()].get_pilots());
-        pilotsDialog.exec();
-        fileWrite(depPassFlights);
-    }
     if (sender()->property("type") == "depCargo") {
-        PilotsRegDialog pilotsDialog(depCargoFlights[sender()->property("row").toInt()].get_pilots());
-        pilotsDialog.exec();
+        CargoDialog cargoDialog(depCargoFlights[sender()->property("row").toInt()].get_cargo_list());
+        cargoDialog.exec();
         fileWrite(depCargoFlights);
     }
+    vectorToTable();
 }
 
 void StartWindow::onCrewButtonClicked() {
@@ -410,6 +428,7 @@ void StartWindow::onCrewButtonClicked() {
         crewDialog.exec();
         fileWrite(depPassFlights);
     }
+    vectorToTable();
 }
 
 void StartWindow::onEditButtonClicked() {
@@ -637,8 +656,7 @@ void StartWindow::vectorToTable() {
             ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 15,
                                      new QTableWidgetItem(QString::fromStdString(flight.get_check_in_end_time())));
             ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 16,
-                                     new QTableWidgetItem(
-                                         QString::fromStdString(flight.get_boarding_start_time())));
+                                     new QTableWidgetItem(QString::fromStdString(flight.get_boarding_start_time())));
             ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 17,
                                      new QTableWidgetItem(QString::fromStdString(flight.get_boarding_end_time())));
             ui->tableWidget->setItem(ui->tableWidget->rowCount() - 1, 18,

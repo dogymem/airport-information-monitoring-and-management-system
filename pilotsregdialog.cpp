@@ -96,8 +96,8 @@ void PilotsRegDialog::on_addButton_clicked() {
 void PilotsRegDialog::onUndoClick() {
     try {
         pilots = backUpPilots.pop();
-    }catch(const char*) {
-        //qmsg
+    }catch(StackException& e) {
+        e.showMessage();
     }
     vectorToTable();
 }

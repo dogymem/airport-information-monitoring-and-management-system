@@ -335,7 +335,7 @@ public:
     void set_cargo_start_load_time(const string &cargo_start_load_time);
     string get_cargo_end_load_time();
     void set_cargo_end_load_time(const string &cargo_end_load_time);
-    vector<Cargo> get_cargo_list();
+    vector<Cargo>& get_cargo_list();
     void set_cargo_list(const vector<Cargo> &cargo_list);
 };
 

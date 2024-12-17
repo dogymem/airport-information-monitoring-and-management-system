@@ -252,7 +252,7 @@ public:
 
     void retranslateUi(QMainWindow *StartWindow)
     {
-        StartWindow->setWindowTitle(QCoreApplication::translate("StartWindow", "StartWindow", nullptr));
+        StartWindow->setWindowTitle(QCoreApplication::translate("StartWindow", "Flights", nullptr));
         actionRegestration->setText(QCoreApplication::translate("StartWindow", "Regestration", nullptr));
 #if QT_CONFIG(shortcut)
         actionRegestration->setShortcut(QCoreApplication::translate("StartWindow", "Ctrl+R", nullptr));

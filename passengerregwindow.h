@@ -1,7 +1,3 @@
-//
-// Created by Егор Томашев on 22.10.24.
-//
-
 #ifndef PASSENGERREGWINDOW_H
 #define PASSENGERREGWINDOW_H
 

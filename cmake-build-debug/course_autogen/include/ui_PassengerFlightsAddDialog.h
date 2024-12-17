@@ -159,7 +159,7 @@ public:
 
     void retranslateUi(QDialog *PassengerFlightsAddDialog)
     {
-        PassengerFlightsAddDialog->setWindowTitle(QCoreApplication::translate("PassengerFlightsAddDialog", "PassengerFlightsAddDialog", nullptr));
+        PassengerFlightsAddDialog->setWindowTitle(QCoreApplication::translate("PassengerFlightsAddDialog", "Add flight", nullptr));
 #if QT_CONFIG(whatsthis)
         time->setWhatsThis(QCoreApplication::translate("PassengerFlightsAddDialog", "Arrival time", nullptr));
 #endif // QT_CONFIG(whatsthis)

@@ -963,7 +963,7 @@ void DepartingCargoFlight::set_cargo_end_load_time(const string &cargoEndLoadTim
     this->cargoEndLoadTime = cargoEndLoadTime;
 }
 
-vector<Cargo> DepartingCargoFlight::get_cargo_list() {
+vector<Cargo>& DepartingCargoFlight::get_cargo_list() {
     return cargoList;
 }
 

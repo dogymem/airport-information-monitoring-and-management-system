@@ -136,7 +136,7 @@ public:
 
     void retranslateUi(QDialog *DepartedCargoFlightsAddDialog)
     {
-        DepartedCargoFlightsAddDialog->setWindowTitle(QCoreApplication::translate("DepartedCargoFlightsAddDialog", "DepartedCargoFlightsAddDialog", nullptr));
+        DepartedCargoFlightsAddDialog->setWindowTitle(QCoreApplication::translate("DepartedCargoFlightsAddDialog", "Add flight", nullptr));
         AddButton->setText(QCoreApplication::translate("DepartedCargoFlightsAddDialog", "Add", nullptr));
         aircrafttype->setPlaceholderText(QCoreApplication::translate("DepartedCargoFlightsAddDialog", "Aircraft type", nullptr));
         isDepart->setText(QCoreApplication::translate("DepartedCargoFlightsAddDialog", "Depated?", nullptr));

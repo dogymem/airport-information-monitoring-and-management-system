@@ -9,9 +9,7 @@ DepartedCargoFlightsAddDialog::DepartedCargoFlightsAddDialog(vector<DepartingCar
     QDialog(parent), ui(new Ui::DepartedCargoFlightsAddDialog),depCargoFlight(depCargoFlight), isEditing(isEditing), row(row) {
     ui->setupUi(this);
     connect(ui->AddButton, &QPushButton::clicked, this, &DepartedCargoFlightsAddDialog::onAddButtonClick);
-    ui->time->setMinimumDate(QDate::currentDate().addDays(-3));
     ui->time->setDateTime(QDateTime::currentDateTime());
-    ui->time->setMaximumDate(QDate::currentDate().addDays(3));
     ui->cargoStartTime->setTime(QTime::currentTime());
     ui->cargoEndTime->setTime(QTime::currentTime());
     if (isEditing) {
