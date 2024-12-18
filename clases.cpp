@@ -168,9 +168,6 @@ void Pilot::set_rank(const string &rank) {
     if (rank[0]<'A' || rank[0]>'Z') {
         throw pilotException("Rank must start with a capital letter");
     }
-    if (!isAllLetters(rank)) {
-        throw pilotException("Rank must contain only letters");
-    }
     this->rank = rank;
 }
 

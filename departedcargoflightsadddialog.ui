@@ -27,7 +27,11 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="13" column="0">
-    <widget class="QDoubleSpinBox" name="maxWeight"/>
+    <widget class="QDoubleSpinBox" name="maxWeight">
+     <property name="maximum">
+      <double>99999999.000000000000000</double>
+     </property>
+    </widget>
    </item>
    <item row="3" column="0">
     <widget class="QDateTimeEdit" name="time">
@@ -40,6 +44,9 @@
        <month>12</month>
        <day>31</day>
       </datetime>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

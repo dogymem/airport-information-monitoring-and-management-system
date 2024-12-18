@@ -30,6 +30,17 @@ public:
 
     }
     void push(T x) {
+        int size = 0;
+        for(Iterator it = begin(); it != end(); ++it){
+            size++;
+        }
+        if (size == 2) {
+            while(node->next->next!=nullptr) {
+                node=node->next;
+            }
+            delete(node->next);
+            node->next=nullptr;
+        }
         auto* newNode = new StackNode<T>();
         newNode->value = x;
         newNode->next = this->node;
@@ -58,12 +69,10 @@ public:
     public:
         explicit Iterator(StackNode<T>* start) : current(start) {}
 
-        // Перегрузка оператора разыменования
         T& operator*() {
             return current->data;
         }
 
-        // Перегрузка оператора инкремента
         Iterator& operator++() {
             if (current) {
                 current = current->next;
@@ -71,7 +80,6 @@ public:
             return *this;
         }
 
-        // Операторы сравнения
         bool operator==(const Iterator& other) const {
             return current == other.current;
         }
@@ -128,7 +136,7 @@ private:
     bool permission = false;
     bool isArrivedSelected = true;
     QList<QString> headerLabels1 = {"Passenger flights", "Aircr.", "Staff", "Time", "Runway", "Depar.", "Arrived", "Late", "Cust req.", "Conn.", "Emg.", "Pass.", "Gate", "Term.", "Bus req.", "Bagg. area", "Ass.", "Vias", "Bagg. unl."};
-    QList<QString> headerLabels2 = {"Cargo flights", "Aircr.", "Staff", "Time", "Runway", "Depar.", "Arrived", "Late", "Cust req.", "Conn.", "Emg.", "Weight", "Type", "Cargo unl."};
+    QList<QString> headerLabels2 = {"Cargo flights", "Aircr.", "Staff", "Time", "Runway", "Depar.", "Arrived", "Late", "Cust req.", "Conn.", "Emg.", "Weight", "Type", "Cargo unl.",""};
     QList<QString> headerLabels3 = {"Passenger flights", "Aircr.", "Staff", "Time", "Runway", "Departed", "Dest.", "Status", "Fuel st.", "Aircraft st.", "Terminal", "Gate", "Pass. max", "Terminal", "CheckIn start", "CheckIn end", "Board. start", "Board. end", "Bagg. loaded"};
     QList<QString> headerLabels4 = {"Cargo flights", "Aircr.", "Staff", "Time", "Runway", "Departed", "Dest.", "Status", "Fuel st.", "Aircraft st.", "Max weight","Cargo type", "Loaded", "Load. start", "Load. end"};
 };
